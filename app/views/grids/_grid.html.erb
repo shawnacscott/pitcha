@@ -1,7 +1,7 @@
 <li id="grid-<%= grid.id %>">
   <span class="title"><%= link_to grid.title, grid %></span>
   <span class="content">
-    <%= image_tag grid.picture.url if grid.picture? %>
+    <%= link_to image_tag(grid.picture.url), grid %>
   </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(grid.created_at) %> ago by <%= link_to grid.user.name, grid.user %>.
