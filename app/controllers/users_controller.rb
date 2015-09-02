@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @feed_items = @user.uploads.paginate(page: params[:page])
   end
 
   def new
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User destroyed."
+    flash.now[:success] = "User destroyed."
     redirect_to root_path
   end
 

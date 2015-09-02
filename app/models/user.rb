@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :favs, dependent: :destroy
   has_many :grids, dependent: :destroy
 
-  def feed
+  def uploads
     Grid.where("user_id = ?", id)
   end
 end

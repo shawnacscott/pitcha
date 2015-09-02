@@ -1,0 +1,6 @@
+<% if @public_feed_items.any? %>
+  <ol class="grids">
+    <%= render @public_feed_items %>
+  </ol>
+  <%= will_paginate @public_feed_items %>
+<% end %>
