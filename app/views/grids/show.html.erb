@@ -1,0 +1,15 @@
+<% provide(:title, @grid.title) %>
+<div class='row'>
+  <span class='col-sm-4 col-sm-offset-2'>
+    <section class='grid-content'>
+      <h1>
+        <%= @grid.title %>
+      </h1>
+      <%= image_tag @grid.picture.url if @grid.picture? %>
+    </section>
+  </span>
+  <div>
+    <%= gravatar_for(@grid.user) %>
+    <%= @grid.user.name %>
+  </div>
+</div>
