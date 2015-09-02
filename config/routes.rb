@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   get 'sessions/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
-  get 'favs' => 'welcome#index'
+  root 'grids#all'
+  get 'favs' => 'users#favs'
   get 'login' => 'sessions#new'
+  get 'signup' => 'users#new'
   resources :grids
 
   # Example of regular route:
