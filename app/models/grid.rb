@@ -1,5 +1,6 @@
 class Grid < ActiveRecord::Base
-  belongs_to :users
+  attr_accessor :title, :picture
+  belongs_to :user
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true

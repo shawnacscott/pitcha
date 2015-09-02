@@ -1,8 +1,6 @@
 <li id="grid-<%= grid.id %>">
-  <%= link_to gravatar_for(grid.user, size: 50), grid.user %>
-  <span class="user"><%= link_to grid.user.name, grid.user %></span>
+  <span class="title"><%= link_to grid.title, grid %></span>
   <span class="content">
-    <%= grid.title %>
     <%= image_tag grid.picture.url if grid.picture? %>
   </span>
   <span class="timestamp">

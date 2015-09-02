@@ -1,15 +1,15 @@
 <% provide :title, 'Upload' %>
-<h1>Login</h1>
+<h1>Upload</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:grid, url: upload_path, html: { multipart: true }) do |f| %>
+    <%= form_for(@grid, html: { multipart: true }) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
       <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control' %>
 
       <%= f.file_field :picture %>
-      
+
       <%= f.submit "Upload", class: "btn btn-primary" %>
     <% end %>
   </div>

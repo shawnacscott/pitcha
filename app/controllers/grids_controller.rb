@@ -1,6 +1,10 @@
 class GridsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
 
+  def new
+    @grid = Grid.new
+  end
+
   def create
     @grid = current_user.grids.build(grid_params)
     if @grid.save
@@ -9,6 +13,11 @@ class GridsController < ApplicationController
     else
       redirect_to root_url
     end
+  end
+
+  def show
+    @grid = Grid.find(params[:id])
+    @user = User.find(params[@grid.user])
   end
 
   def destroy

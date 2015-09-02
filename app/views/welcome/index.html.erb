@@ -1,4 +1,15 @@
-content
-<br>
-<br>
-content again
+<% unless logged_in? %>
+  <div class="center jumbotron">
+    <h1>Pitcha</h1>
+    <p>
+      This is a rails demo of an image board.
+    </p>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+<% end %>
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Grid Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
