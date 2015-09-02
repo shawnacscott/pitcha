@@ -1,0 +1,13 @@
+<% provide :title, 'Upload' %>
+<h1>Login</h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:grid, url: upload_path) do |f| %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+
+      <%= f.submit "Upload", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
