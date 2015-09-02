@@ -1,5 +1,5 @@
 class Grid < ActiveRecord::Base
-  attr_accessor :title, :picture
+  # attr_accessor :title, :picture
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader

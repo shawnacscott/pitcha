@@ -17,7 +17,7 @@ class GridsController < ApplicationController
 
   def show
     @grid = Grid.find(params[:id])
-    @user = User.find(params[@grid.user])
+    # @user = User.find(params[@grid.user])
   end
 
   def destroy
